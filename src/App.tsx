@@ -55,8 +55,8 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/10 relative">
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-0">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/10 relative overflow-x-hidden">
+      <div className="fixed inset-0 opacity-[0.02] pointer-events-none -z-10">
         <div 
           className="w-full h-full" 
           style={{
@@ -65,7 +65,7 @@ function App() {
         />
       </div>
 
-      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/50 shadow-sm relative">
+      <header className="sticky top-0 z-50 bg-background/98 backdrop-blur-md border-b border-border/50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-center gap-3 mb-2">
             <Snowflake className="w-8 h-8 text-accent" weight="duotone" />
@@ -87,7 +87,7 @@ function App() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 md:py-12 relative z-10">
+      <main className="container mx-auto px-4 py-8 md:py-12 relative">
         <div className="mb-12">
           <RouteMap />
         </div>
@@ -109,7 +109,7 @@ function App() {
         </div>
       </main>
 
-      <footer className="bg-primary/5 border-t border-border/50 py-8 mt-16 relative z-10">
+      <footer className="bg-primary/5 border-t border-border/50 py-8 mt-16 relative">
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
             <Snowflake className="w-5 h-5 text-accent" weight="duotone" />
@@ -125,7 +125,7 @@ function App() {
         </div>
       </footer>
 
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-t border-border shadow-lg p-3 relative">
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-t border-border shadow-lg p-3 relative">
         <DayProgress 
           currentDay={currentDay ?? 1} 
           totalDays={4} 
