@@ -24,7 +24,7 @@ export function SidebarInfo() {
   };
 
   return (
-    <div className="lg:sticky lg:top-6 space-y-6">
+    <div className="lg:sticky lg:top-24 space-y-6 relative z-20">
       <Tabs defaultValue="accommodation" className="w-full">
         <TabsList className="grid w-full grid-cols-3">
           <TabsTrigger value="accommodation" className="text-xs sm:text-sm">
