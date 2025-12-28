@@ -41,11 +41,11 @@ A romantic single-page travel itinerary website showcasing a winter couples trip
 - Success criteria: Images load efficiently, carousel is touch-friendly on mobile, fallback to Unsplash if URLs fail
 
 **Accommodation & Notes Sidebar**
-- Functionality: Fixed/sticky panel showing nightly accommodation options (marked as "候補中" for pending) and important winter safety reminders
-- Purpose: Keep critical lodging and safety information accessible without scrolling
+- Functionality: Fixed/sticky panel with three tabs - accommodation options (marked as "候補中" for pending), winter safety reminders, and winter road condition websites (DriveBC, 511 Alberta, etc.)
+- Purpose: Keep critical lodging, safety information, and road condition resources accessible without scrolling
 - Trigger: Always visible on desktop, accessible via tab/button on mobile
-- Progression: User needs hotel info → Glances at sidebar → Sees all options with status → Can click for booking links
-- Success criteria: Stays visible during scroll on desktop, easily accessible on mobile, clear visual distinction between confirmed and pending options
+- Progression: User needs info → Clicks appropriate tab → Sees all options with status/links → Can click external links to check road conditions
+- Success criteria: Stays visible during scroll on desktop, easily accessible on mobile, clear visual distinction between confirmed and pending options, road condition links open in new tabs
 
 ## Edge Case Handling
 

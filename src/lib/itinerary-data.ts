@@ -329,3 +329,36 @@ export const safetyNotes = [
     content: '車內準備毛毯、熱飲、手電筒、急救包等緊急物資。'
   }
 ];
+
+export const roadConditionSites = [
+  {
+    name: 'DriveBC',
+    url: 'https://drivebc.ca/',
+    description: 'BC省官方路況網站，提供即時路況、攝影機、天氣警告',
+    coverage: 'BC省全域'
+  },
+  {
+    name: '511 Alberta',
+    url: 'https://511.alberta.ca/',
+    description: 'Alberta省官方路況網站，涵蓋 Banff、Lake Louise 路段',
+    coverage: 'Alberta省全域'
+  },
+  {
+    name: 'Alberta Transportation',
+    url: 'https://www.511.alberta.ca/map',
+    description: '即時地圖顯示道路狀況、交通事故、道路施工',
+    coverage: 'Alberta省'
+  },
+  {
+    name: 'Parks Canada Road Reports',
+    url: 'https://www.pc.gc.ca/en/pn-np/ab/banff/visit/conditions',
+    description: 'Banff 國家公園內道路狀況與公園通知',
+    coverage: 'Banff 國家公園'
+  },
+  {
+    name: 'Environment Canada Weather',
+    url: 'https://weather.gc.ca/',
+    description: '加拿大氣象局官方天氣預報與警報',
+    coverage: '加拿大全國'
+  }
+];
