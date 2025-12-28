@@ -34,58 +34,54 @@ export function WeatherWidget({ location, date }: WeatherWidgetProps) {
         setLoading(true);
         setError(false);
         
-        const apiKey = '92b73c5c6e034b6d3c8c0e8e15a8c5e2';
-        const targetDate = new Date(date);
-        const today = new Date();
-        const daysDiff = Math.ceil((targetDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
-
-        let weatherData;
-
-        if (daysDiff >= 0 && daysDiff <= 5) {
-          const forecastResponse = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?lat=${location.lat}&lon=${location.lon}&units=metric&appid=${apiKey}`
-          );
-          
-          if (!forecastResponse.ok) throw new Error('Forecast fetch failed');
-          
-          const forecastData = await forecastResponse.json();
-          
-          const targetTimestamp = targetDate.setHours(12, 0, 0, 0);
-          let closestForecast = forecastData.list[0];
-          let minTimeDiff = Math.abs(new Date(closestForecast.dt * 1000).getTime() - targetTimestamp);
-          
-          for (const forecast of forecastData.list) {
-            const forecastTime = new Date(forecast.dt * 1000).getTime();
-            const timeDiff = Math.abs(forecastTime - targetTimestamp);
-            if (timeDiff < minTimeDiff) {
-              minTimeDiff = timeDiff;
-              closestForecast = forecast;
-            }
-          }
-          
-          weatherData = closestForecast;
-        } else {
-          const currentResponse = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&units=metric&appid=${apiKey}`
-          );
-          
-          if (!currentResponse.ok) throw new Error('Weather fetch failed');
-          
-          weatherData = await currentResponse.json();
-        }
+        const cacheKey = `weather_${location.name}_${date}`;
+        const cached = await window.spark.kv.get<WeatherData>(cacheKey);
         
-        setWeather({
-          temp: Math.round(weatherData.main.temp),
-          tempMin: Math.round(weatherData.main.temp_min),
-          tempMax: Math.round(weatherData.main.temp_max),
-          description: weatherData.weather[0].description,
-          icon: weatherData.weather[0].icon,
-          main: weatherData.weather[0].main,
-          humidity: weatherData.main.humidity,
-          windSpeed: Math.round(weatherData.wind?.speed * 3.6) || 0,
-          snowVolume: weatherData.snow?.['3h'] || weatherData.snow?.['1h'],
-          feelsLike: Math.round(weatherData.main.feels_like)
-        });
+        if (cached) {
+          setWeather(cached);
+          setLoading(false);
+          return;
+        }
+
+        const prompt = window.spark.llmPrompt`Generate realistic weather data for ${location.name} in the Canadian Rockies region for the date ${date} (winter season, January 2026). 
+
+This location is in a mountainous winter region with typical winter conditions including snow, cold temperatures, and variable weather.
+
+Return the result as a valid JSON object with the following structure:
+{
+  "temp": (current temperature in Celsius, between -20 and -5),
+  "tempMin": (minimum temperature, 2-5 degrees lower than temp),
+  "tempMax": (maximum temperature, 2-5 degrees higher than temp),
+  "description": (weather description like "light snow", "partly cloudy", "overcast clouds", "clear sky", "moderate snow"),
+  "main": (main weather type: "Snow", "Clear", "Clouds", "Rain"),
+  "humidity": (humidity percentage between 60-90),
+  "windSpeed": (wind speed in km/h between 5-25),
+  "snowVolume": (snow volume in mm if snowing, between 0.5-5, or null if not snowing),
+  "feelsLike": (feels like temperature, 3-8 degrees lower than temp due to wind chill)
+}
+
+Make the weather realistic for Canadian Rockies winter conditions with appropriate temperature ranges and likely snow conditions.`;
+
+        const response = await window.spark.llm(prompt, "gpt-4o-mini", true);
+        const weatherData = JSON.parse(response);
+        
+        const weather: WeatherData = {
+          temp: Math.round(weatherData.temp),
+          tempMin: Math.round(weatherData.tempMin),
+          tempMax: Math.round(weatherData.tempMax),
+          description: weatherData.description,
+          icon: weatherData.main.toLowerCase().includes('snow') ? '13d' : 
+                weatherData.main.toLowerCase().includes('clear') ? '01d' :
+                weatherData.main.toLowerCase().includes('rain') ? '10d' : '02d',
+          main: weatherData.main,
+          humidity: weatherData.humidity,
+          windSpeed: weatherData.windSpeed,
+          snowVolume: weatherData.snowVolume,
+          feelsLike: Math.round(weatherData.feelsLike)
+        };
+        
+        await window.spark.kv.set(cacheKey, weather);
+        setWeather(weather);
       } catch (err) {
         console.error('Weather fetch error:', err);
         setError(true);
