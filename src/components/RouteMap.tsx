@@ -52,19 +52,29 @@ export function RouteMap() {
       L = (await import('leaflet')).default;
       await import('leaflet/dist/leaflet.css');
 
-      const iconUrl = 'data:image/svg+xml;base64,' + btoa(`
-        <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.5 0C5.6 0 0 5.6 0 12.5c0 8.4 12.5 28.5 12.5 28.5S25 20.9 25 12.5C25 5.6 19.4 0 12.5 0z" fill="#E8965A" stroke="#fff" stroke-width="2"/>
-          <circle cx="12.5" cy="12.5" r="5" fill="#fff"/>
-        </svg>
-      `);
+      const dayColors: Record<number, string> = {
+        1: '#E8965A',
+        2: '#3B82F6',
+        3: '#8B5CF6',
+        4: '#EC4899'
+      };
 
-      const customIcon = L.icon({
-        iconUrl,
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-      });
+      const createDayIcon = (day: number) => {
+        const color = dayColors[day] || '#E8965A';
+        const iconUrl = 'data:image/svg+xml;base64,' + btoa(`
+          <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.5 0C5.6 0 0 5.6 0 12.5c0 8.4 12.5 28.5 12.5 28.5S25 20.9 25 12.5C25 5.6 19.4 0 12.5 0z" fill="${color}" stroke="#fff" stroke-width="2"/>
+            <circle cx="12.5" cy="12.5" r="5" fill="#fff"/>
+          </svg>
+        `);
+
+        return L.icon({
+          iconUrl,
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+        });
+      };
 
       const startIconUrl = 'data:image/svg+xml;base64,' + btoa(`
         <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
@@ -113,15 +123,22 @@ export function RouteMap() {
       }).addTo(mapInstance);
 
       waypoints.forEach((waypoint, index) => {
-        let icon = customIcon;
-        if (waypoint.type === 'start') icon = startIcon;
-        if (waypoint.type === 'end') icon = endIcon;
+        let icon;
+        if (waypoint.type === 'start') {
+          icon = startIcon;
+        } else if (waypoint.type === 'end') {
+          icon = endIcon;
+        } else {
+          icon = createDayIcon(waypoint.day);
+        }
+
+        const dayColor = dayColors[waypoint.day] || '#E8965A';
 
         const marker = L.marker([waypoint.lat, waypoint.lon], { icon })
           .addTo(mapInstance)
           .bindPopup(`
             <div style="font-family: Inter, sans-serif; padding: 4px;">
-              <strong style="color: #E8965A; font-size: 14px;">Day ${waypoint.day}</strong><br/>
+              <strong style="color: ${dayColor}; font-size: 14px;">Day ${waypoint.day}</strong><br/>
               <span style="font-size: 13px;">${waypoint.name}</span>
             </div>
           `);
@@ -158,6 +175,16 @@ export function RouteMap() {
         marker.openPopup();
       }
     }
+  };
+
+  const getDayColor = (day: number) => {
+    const colors: Record<number, string> = {
+      1: 'text-[#E8965A]',
+      2: 'text-[#3B82F6]',
+      3: 'text-[#8B5CF6]',
+      4: 'text-[#EC4899]'
+    };
+    return colors[day] || 'text-accent';
   };
 
   const getCardTypeColor = (type: string) => {
@@ -216,8 +243,20 @@ export function RouteMap() {
                 <span className="text-muted-foreground">起點</span>
               </div>
               <div className="flex items-center gap-1">
-                <div className="w-3 h-3 rounded-full bg-accent border-2 border-white shadow-sm" />
-                <span className="text-muted-foreground">途經</span>
+                <div className="w-3 h-3 rounded-full border-2 border-white shadow-sm" style={{ backgroundColor: '#E8965A' }} />
+                <span className="text-muted-foreground">Day 1</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <div className="w-3 h-3 rounded-full border-2 border-white shadow-sm" style={{ backgroundColor: '#3B82F6' }} />
+                <span className="text-muted-foreground">Day 2</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <div className="w-3 h-3 rounded-full border-2 border-white shadow-sm" style={{ backgroundColor: '#8B5CF6' }} />
+                <span className="text-muted-foreground">Day 3</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <div className="w-3 h-3 rounded-full border-2 border-white shadow-sm" style={{ backgroundColor: '#EC4899' }} />
+                <span className="text-muted-foreground">Day 4</span>
               </div>
               <div className="flex items-center gap-1">
                 <div className="w-3 h-3 rounded-full bg-red-600 border-2 border-white shadow-sm" />
@@ -244,7 +283,7 @@ export function RouteMap() {
                         ? 'text-green-500'
                         : waypoint.type === 'end'
                         ? 'text-red-600'
-                        : 'text-accent'
+                        : getDayColor(waypoint.day)
                     }`}
                     weight="fill"
                   />
