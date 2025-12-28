@@ -4,6 +4,7 @@ import { itineraryData } from '@/lib/itinerary-data';
 import { DayProgress } from '@/components/DayProgress';
 import { DaySection } from '@/components/DaySection';
 import { SidebarInfo } from '@/components/SidebarInfo';
+import { RouteMap } from '@/components/RouteMap';
 import { Heart, Snowflake } from '@phosphor-icons/react';
 
 function App() {
@@ -87,6 +88,10 @@ function App() {
       </header>
 
       <main className="container mx-auto px-4 py-8 md:py-12">
+        <div className="mb-12">
+          <RouteMap />
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           <div className="lg:col-span-2 space-y-12 md:space-y-16">
             {itineraryData.map((day) => (
