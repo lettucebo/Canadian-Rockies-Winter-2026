@@ -1,4 +1,4 @@
-import { MapPin, ForkKnife, Car, Mountains, Bed } from '@phosphor-icons/react';
+import { MapPin, ForkKnife, Car, Mountains, Bed, Lightbulb } from '@phosphor-icons/react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -27,6 +27,8 @@ export function ItineraryCard({ card }: ItineraryCardProps) {
         return 'border-l-4 border-l-transport bg-transport/5';
       case 'accommodation':
         return 'border-l-4 border-l-accent bg-accent/5';
+      case 'alternative':
+        return 'border-l-4 border-l-secondary bg-secondary/5';
       default:
         return '';
     }
@@ -43,6 +45,8 @@ export function ItineraryCard({ card }: ItineraryCardProps) {
         return <Car className={iconClass} weight="duotone" />;
       case 'accommodation':
         return <Bed className={iconClass} weight="duotone" />;
+      case 'alternative':
+        return <Lightbulb className={iconClass} weight="duotone" />;
     }
   };
 
@@ -56,6 +60,8 @@ export function ItineraryCard({ card }: ItineraryCardProps) {
         return 'text-transport-foreground bg-transport';
       case 'accommodation':
         return 'text-accent-foreground bg-accent';
+      case 'alternative':
+        return 'text-secondary-foreground bg-secondary';
       default:
         return 'text-primary-foreground bg-primary';
     }

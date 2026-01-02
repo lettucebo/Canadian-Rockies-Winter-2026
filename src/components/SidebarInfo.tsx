@@ -1,7 +1,7 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Snowflake, Warning, Thermometer, FirstAid, Bed, MapPin, RoadHorizon, ArrowSquareOut } from '@phosphor-icons/react';
+import { Snowflake, Warning, Thermometer, FirstAid, Bed, MapPin, RoadHorizon, ArrowSquareOut, Phone, Info } from '@phosphor-icons/react';
 import { accommodations, safetyNotes, roadConditionSites } from '@/lib/itinerary-data';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
@@ -18,6 +18,10 @@ export function SidebarInfo() {
         return <Thermometer className={iconClass} weight="duotone" />;
       case 'FirstAid':
         return <FirstAid className={iconClass} weight="duotone" />;
+      case 'Phone':
+        return <Phone className={iconClass} weight="duotone" />;
+      case 'Info':
+        return <Info className={iconClass} weight="duotone" />;
       default:
         return <Snowflake className={iconClass} weight="duotone" />;
     }
@@ -54,26 +58,22 @@ export function SidebarInfo() {
                 </Badge>
               </div>
 
-              {acc.note ? (
-                <p className="text-sm text-muted-foreground italic">{acc.note}</p>
-              ) : (
-                <div className="space-y-2">
-                  {acc.options?.map((option, optIdx) => (
-                    <div
-                      key={optIdx}
-                      className="text-sm p-2 bg-muted/30 rounded border border-border/50"
-                    >
-                      <div className="font-medium">{option.name}</div>
-                      <div className="text-xs text-muted-foreground mt-1">{option.features}</div>
-                      {option.tier && (
-                        <Badge variant="outline" className="mt-1 text-xs">
-                          {option.tier === 'luxury' ? '奢華' : option.tier === 'mid-range' ? '中檔' : '經濟'}
-                        </Badge>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
+              <div className="space-y-2">
+                {acc.options?.map((option, optIdx) => (
+                  <div
+                    key={optIdx}
+                    className="text-sm p-2 bg-muted/30 rounded border border-border/50"
+                  >
+                    <div className="font-medium">{option.name}</div>
+                    <div className="text-xs text-muted-foreground mt-1">{option.features}</div>
+                    {option.tier && (
+                      <Badge variant="outline" className="mt-1 text-xs">
+                        {option.tier === 'luxury' ? '奢華' : option.tier === 'confirmed' ? '已確認' : option.tier === 'mid-range' ? '中檔' : '經濟'}
+                      </Badge>
+                    )}
+                  </div>
+                ))}
+              </div>
             </Card>
           ))}
         </TabsContent>

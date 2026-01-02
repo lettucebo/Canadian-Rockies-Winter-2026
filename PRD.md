@@ -1,6 +1,6 @@
 # Planning Guide
 
-A romantic single-page travel itinerary website showcasing a winter couples trip to the Canadian Rockies from January 3-6, 2026, featuring daily schedules, weather integration, photo galleries, and accommodation tracking.
+A romantic single-page travel itinerary website showcasing a winter couples trip to the Canadian Rockies from January 3-6, 2026. The journey begins from Lake Louise, travels through Abraham Lake and Nordegg to Kamloops, then to Kelowna for icewine tasting at Little Straw Vineyards, continues to Halcyon Hot Springs for a luxury spa experience, and returns to Banff via Emerald Lake. Features daily schedules, alternative attractions, weather integration, interactive route maps, photo galleries, and confirmed accommodation tracking.
 
 **Experience Qualities**: 
 1. **Romantic & Cozy** - Evoke the warmth of sitting by a fireplace on a snowy night, with soft colors and intimate typography that makes planning feel like part of the adventure.
