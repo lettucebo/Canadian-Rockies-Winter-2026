@@ -51,136 +51,154 @@ export function RouteMap() {
     let routingControl: any;
 
     const initMap = async () => {
-      L = (await import('leaflet')).default;
-      LRM = (await import('leaflet-routing-machine')).default;
-      await import('leaflet/dist/leaflet.css');
-      await import('leaflet-routing-machine/dist/leaflet-routing-machine.css');
+      try {
+        L = (await import('leaflet')).default;
+        LRM = (await import('leaflet-routing-machine')).default;
+        await import('leaflet/dist/leaflet.css');
+        await import('leaflet-routing-machine/dist/leaflet-routing-machine.css');
 
-      const dayColors: Record<number, string> = {
-        1: '#E8965A',
-        2: '#3B82F6',
-        3: '#8B5CF6',
-        4: '#EC4899'
-      };
+        const dayColors: Record<number, string> = {
+          1: '#E8965A',
+          2: '#3B82F6',
+          3: '#8B5CF6',
+          4: '#EC4899'
+        };
 
-      const createDayIcon = (day: number) => {
-        const color = dayColors[day] || '#E8965A';
-        const iconUrl = 'data:image/svg+xml;base64,' + btoa(`
+        const createDayIcon = (day: number) => {
+          const color = dayColors[day] || '#E8965A';
+          const iconUrl = 'data:image/svg+xml;base64,' + btoa(`
+            <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.5 0C5.6 0 0 5.6 0 12.5c0 8.4 12.5 28.5 12.5 28.5S25 20.9 25 12.5C25 5.6 19.4 0 12.5 0z" fill="${color}" stroke="#fff" stroke-width="2"/>
+              <circle cx="12.5" cy="12.5" r="5" fill="#fff"/>
+            </svg>
+          `);
+
+          return L.icon({
+            iconUrl,
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+          });
+        };
+
+        const startIconUrl = 'data:image/svg+xml;base64,' + btoa(`
           <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.5 0C5.6 0 0 5.6 0 12.5c0 8.4 12.5 28.5 12.5 28.5S25 20.9 25 12.5C25 5.6 19.4 0 12.5 0z" fill="${color}" stroke="#fff" stroke-width="2"/>
+            <path d="M12.5 0C5.6 0 0 5.6 0 12.5c0 8.4 12.5 28.5 12.5 28.5S25 20.9 25 12.5C25 5.6 19.4 0 12.5 0z" fill="#4CAF50" stroke="#fff" stroke-width="2"/>
             <circle cx="12.5" cy="12.5" r="5" fill="#fff"/>
           </svg>
         `);
 
-        return L.icon({
-          iconUrl,
+        const startIcon = L.icon({
+          iconUrl: startIconUrl,
           iconSize: [25, 41],
           iconAnchor: [12, 41],
           popupAnchor: [1, -34],
         });
-      };
 
-      const startIconUrl = 'data:image/svg+xml;base64,' + btoa(`
-        <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.5 0C5.6 0 0 5.6 0 12.5c0 8.4 12.5 28.5 12.5 28.5S25 20.9 25 12.5C25 5.6 19.4 0 12.5 0z" fill="#4CAF50" stroke="#fff" stroke-width="2"/>
-          <circle cx="12.5" cy="12.5" r="5" fill="#fff"/>
-        </svg>
-      `);
+        const endIconUrl = 'data:image/svg+xml;base64,' + btoa(`
+          <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.5 0C5.6 0 0 5.6 0 12.5c0 8.4 12.5 28.5 12.5 28.5S25 20.9 25 12.5C25 5.6 19.4 0 12.5 0z" fill="#DC2626" stroke="#fff" stroke-width="2"/>
+            <circle cx="12.5" cy="12.5" r="5" fill="#fff"/>
+          </svg>
+        `);
 
-      const startIcon = L.icon({
-        iconUrl: startIconUrl,
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-      });
+        const endIcon = L.icon({
+          iconUrl: endIconUrl,
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+        });
 
-      const endIconUrl = 'data:image/svg+xml;base64,' + btoa(`
-        <svg width="25" height="41" viewBox="0 0 25 41" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.5 0C5.6 0 0 5.6 0 12.5c0 8.4 12.5 28.5 12.5 28.5S25 20.9 25 12.5C25 5.6 19.4 0 12.5 0z" fill="#DC2626" stroke="#fff" stroke-width="2"/>
-          <circle cx="12.5" cy="12.5" r="5" fill="#fff"/>
-        </svg>
-      `);
+        mapInstance = L.map(mapRef.current).setView([51.5, -118], 6);
+        setMap(mapInstance);
 
-      const endIcon = L.icon({
-        iconUrl: endIconUrl,
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-      });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors',
+          maxZoom: 19,
+        }).addTo(mapInstance);
 
-      mapInstance = L.map(mapRef.current).setView([51.5, -118], 7);
-      setMap(mapInstance);
+        const routeWaypoints = waypoints.map(w => L.latLng(w.lat, w.lon));
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors',
-        maxZoom: 19,
-      }).addTo(mapInstance);
+        if (routeWaypoints.length > 0) {
+          routingControl = L.Routing.control({
+            waypoints: routeWaypoints,
+            router: L.Routing.osrmv1({
+              serviceUrl: 'https://router.project-osrm.org/route/v1',
+              profile: 'driving'
+            }),
+            lineOptions: {
+              styles: [
+                { color: '#E8965A', opacity: 0.8, weight: 6 },
+                { color: '#FFF', opacity: 0.3, weight: 2 }
+              ],
+              extendToWaypoints: true,
+              missingRouteTolerance: 100
+            },
+            show: false,
+            addWaypoints: false,
+            routeWhileDragging: false,
+            draggableWaypoints: false,
+            fitSelectedRoutes: true,
+            showAlternatives: false,
+            createMarker: function(i: number, waypoint: any, n: number) {
+              const waypointData = waypoints[i];
+              if (!waypointData) return null;
 
-      const routeWaypoints = waypoints.map(w => L.latLng(w.lat, w.lon));
+              let icon;
+              if (waypointData.type === 'start') {
+                icon = startIcon;
+              } else if (waypointData.type === 'end') {
+                icon = endIcon;
+              } else {
+                icon = createDayIcon(waypointData.day);
+              }
 
-      routingControl = LRM.control({
-        waypoints: routeWaypoints,
-        router: LRM.osrmv1({
-          serviceUrl: 'https://router.project-osrm.org/route/v1'
-        }),
-        lineOptions: {
-          styles: [
-            { color: '#E8965A', opacity: 0.8, weight: 6 },
-            { color: '#FFF', opacity: 0.3, weight: 2 }
-          ],
-          extendToWaypoints: true,
-          missingRouteTolerance: 10
-        },
-        show: false,
-        addWaypoints: false,
-        routeWhileDragging: false,
-        draggableWaypoints: false,
-        fitSelectedRoutes: true,
-        showAlternatives: false,
-        createMarker: function(i: number, waypoint: any, n: number) {
-          const waypointData = waypoints[i];
-          if (!waypointData) return null;
+              const dayColor = dayColors[waypointData.day] || '#E8965A';
 
-          let icon;
-          if (waypointData.type === 'start') {
-            icon = startIcon;
-          } else if (waypointData.type === 'end') {
-            icon = endIcon;
-          } else {
-            icon = createDayIcon(waypointData.day);
-          }
+              const marker = L.marker(waypoint.latLng, { 
+                icon,
+                draggable: false
+              })
+                .bindPopup(`
+                  <div style="font-family: Inter, sans-serif; padding: 4px;">
+                    <strong style="color: ${dayColor}; font-size: 14px;">Day ${waypointData.day}</strong><br/>
+                    <span style="font-size: 13px;">${waypointData.name}</span>
+                  </div>
+                `);
 
-          const dayColor = dayColors[waypointData.day] || '#E8965A';
+              marker.on('click', () => {
+                setSelectedWaypoint(waypointData);
+              });
 
-          const marker = L.marker(waypoint.latLng, { 
-            icon,
-            draggable: false
-          })
-            .bindPopup(`
-              <div style="font-family: Inter, sans-serif; padding: 4px;">
-                <strong style="color: ${dayColor}; font-size: 14px;">Day ${waypointData.day}</strong><br/>
-                <span style="font-size: 13px;">${waypointData.name}</span>
-              </div>
-            `);
+              markersRef.current.push(marker);
+              return marker;
+            }
+          }).addTo(mapInstance);
 
-          marker.on('click', () => {
-            setSelectedWaypoint(waypointData);
+          setTimeout(() => {
+            const routingContainer = document.querySelector('.leaflet-routing-container');
+            if (routingContainer) {
+              (routingContainer as HTMLElement).style.display = 'none';
+            }
+          }, 100);
+
+          routingControl.on('routesfound', function() {
+            console.log('Route found and displayed');
           });
 
-          markersRef.current.push(marker);
-          return marker;
+          routingControl.on('routingerror', function(e: any) {
+            console.error('Routing error:', e);
+          });
         }
-      }).addTo(mapInstance);
-
-      const routingContainer = document.querySelector('.leaflet-routing-container');
-      if (routingContainer) {
-        (routingContainer as HTMLElement).style.display = 'none';
+      } catch (error) {
+        console.error('Map initialization error:', error);
       }
     };
 
     initMap();
 
     return () => {
+      markersRef.current = [];
       if (routingControl) {
         try {
           routingControl.remove();
