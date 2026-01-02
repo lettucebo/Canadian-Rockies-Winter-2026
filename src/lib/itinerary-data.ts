@@ -89,10 +89,12 @@ export const itineraryData: DayItinerary[] = [
 • Brownstone Restaurant - 壁爐燭光浪漫氛圍，季節特色菜搭配本地佳釀
 • The Noble Pig Brewhouse - 工藝啤酒配精選小菜`,
         photos: [
-          'https://media-cdn.tripadvisor.com/media/photo-s/0d/5e/0b/d7/brownstone-restaurant.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/8f/8d/9e/front-entrance.jpg?w=1200&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/1c/ba/f9/f4/the-noble-pig-brewhouse.jpg',
-          'https://lh3.googleusercontent.com/p/AF1QipMjQ5YsO3ZZ0YkH7XdZD9fWEPRF0nP8FvZ8rL0=s1360-w1360-h1020'
+          'https://static.vecteezy.com/system/resources/previews/054/657/791/large_2x/candlelight-romantic-dinner-table-for-two-in-restaurant-photo.jpeg',
+          'https://www.newyorkupstate.com/resizer/v2/PRY4RMZU65CANAXR3Z4VE35U2I.jpeg?auth=316fb776cf573bb9220eb401be2ba64cc5d8de2d63025854ec2c1126b6a53a7f&width=800&smart=true&quality=90',
+          'https://simonesonsunset.com/wp-content/uploads/2025/05/o-4.jpg',
+          'https://www.prestigehotelsandresorts.com/wp-content/uploads/2025/05/Pacific-Inn-Moon-wok-rest-Natalie-Dollman-photographer-1-scaled.jpg',
+          'https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=3779152175730638812',
+          'https://static.wixstatic.com/media/5c7601_38f71f57db0e4ef6bb12b65f0384b42f~mv2.jpg/v1/fill/w_1000,h_750,al_c,q_85,usm_0.66_1.00_0.01/5c7601_38f71f57db0e4ef6bb12b65f0384b42f~mv2.jpg'
         ],
         location: { name: 'Kamloops Downtown', lat: 50.6745, lon: -120.3273 }
       },
@@ -102,10 +104,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Accent Inn Kamloops',
         description: '入住Accent Inn Kamloops，乾淨舒適有kitchenette。',
         photos: [
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/88/d5/8d/exterior.jpg?w=700&h=-1&s=1',
-          'https://www.accentinns.com/wp-content/uploads/2019/11/Kamloops-Hotel-Room-1.jpg',
-          'https://media-cdn.tripadvisor.com/media/photo-s/06/73/0f/8e/accent-inns-kamloops.jpg',
-          'https://cf.bstatic.com/xdata/images/hotel/max1024x768/225895184.jpg?k=8e7c9b4e6f0d9e8e8e8e8e8e8e8e8e8e8e8e8e8e&o='
+          'https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/https://www.cfmedia.vfmleonardo.com/imageRepo/3/0/181/216/531/115-19-0499_O/Accent-Inns-Kamloops-Exterior.jpg?tr=w-656%2Ch-390%2Cfo-auto',
+          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/9c/23/b7/standard-king-with-sofabed.jpg?w=900&h=500&s=1',
+          'https://images.trvl-media.com/lodging/1000000/10000/800/759/3675d7ee.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+          'https://images.trvl-media.com/lodging/1000000/10000/800/759/e213b699.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+          'https://foto.hrsstatic.com/fotos/0/2/800/458/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2Fdms%2F53304%2FAMADEUS%2F6c80ae8862f54df49cdd7b8b4e9f82e2.jpeg/e81472cf39ee12fcef74669414cddcdf/512%2C314/6/Accent_Inn_Kamloops-Kamloops-Restaurant-1-53304.jpg',
+          'https://foto.hrsstatic.com/fotos/0/2/800/458/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2Fdms%2F53304%2FAMADEUS%2F2af1c9cc9bfc43f38f48fd3f87a4ee50.jpeg/c18c7af0a5f1754cbb1910bf0809ff1a/224%2C168/6/Accent_Inn_Kamloops-Kamloops-Restaurant-1-53304.jpg'
         ],
         location: { name: 'Accent Inn Kamloops', lat: 50.6745, lon: -120.3273 },
         highlights: [
@@ -120,9 +124,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Crescent Falls',
         description: '近Nordegg，冬季凍瀑布短步道散步拍照。',
         photos: [
-          'https://live.staticflickr.com/65535/49425583681_c7d7c03b51_b.jpg',
-          'https://www.travelalberta.com/content/dam/travelalberta/images/things-to-do/nature-wildlife/waterfalls/crescent-falls-winter.jpg',
-          'https://images.squarespace-cdn.com/content/v1/5e8e8e8e8e8e8e8e8e8e8e8e/1234567890123-ABCDEFG/crescent-falls-winter.jpg'
+          'https://images-dh-production-baselayer.dailyhive.com/uploads/2025/12/Shutterstock_2691741087.jpg',
+          'https://i.ytimg.com/vi/b9i_PfOnRp0/maxresdefault.jpg',
+          'https://images.curiocity.com/uploads/2024/11/Untitled-design-2024-11-21T170031.338-1.jpg',
+          'https://nordeggadventures.ca/wp-content/uploads/2018/09/20181230-054-scaled.jpg',
+          'https://i.ytimg.com/vi/ImX2Fa0PdMY/maxresdefault.jpg',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10157662753312337'
         ],
         location: { name: 'Crescent Falls', lat: 52.3167, lon: -116.2167 }
       },
@@ -132,8 +139,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Siffleur Falls',
         description: 'Nordegg附近雪地看凍瀑。',
         photos: [
-          'https://images.squarespace-cdn.com/content/v1/5c5e5c5c5c5c5c5c5c5c5c5c/1234567890123-ABCDEFG/siffleur-falls-winter.jpg',
-          'https://www.travelalberta.com/content/dam/travelalberta/images/things-to-do/nature-wildlife/waterfalls/siffleur-falls.jpg'
+          'https://www.vmcdn.ca/f/files/greatwest/images/cool-winter-guide/2022-2023/2022-23-articles/2023/01-3-falls-siffleur.jpg;w=960',
+          'https://www.vmcdn.ca/f/files/greatwest/images/cool-winter-guide/2022-2023/2022-23-articles/2023/01-3-falls-elbow.jpg;w=960',
+          'https://images.curiocity.com/uploads/2023/11/The-7-1.png',
+          'https://girthhitchguiding.ca/wp-content/uploads/2023/01/Winter-Hike-to-Siffleur-Falls-140203-Explore-Nordegg-Abraham-Lake-JP-Fortin-5-767x576.jpg',
+          'https://thumbs.dreamstime.com/b/frozen-mountain-waterfall-canadian-rockies-early-springtime-hiking-alberta-rocky-mountains-siffleur-falls-ice-cliffs-213932705.jpg',
+          'https://www.todocanada.ca/wp-content/uploads/Winter-Weekend-Getaway-to-Nordegg-Ice-Bubble-Lake-Walks-Frozen-Waterfalls-Cozy-Stays.jpg'
         ],
         location: { name: 'Siffleur Falls', lat: 52.0333, lon: -116.2667 }
       },
@@ -143,8 +154,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Cline River Canyon',
         description: '近Abraham Lake，雪地峽谷輕鬆散步。',
         photos: [
-          'https://davidthompsoncountry.ca/wp-content/uploads/2020/10/cline-river-canyon.jpg',
-          'https://www.travelalberta.com/content/dam/travelalberta/images/things-to-do/nature-wildlife/cline-river-winter.jpg'
+          'https://nordeggadventures.ca/wp-content/uploads/2021/03/Icefalls-Winter-Hike-20160208-44070-scaled-1.jpg',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=3533775350190598',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=3533775286857271',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10223684512044965',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=3533775270190606',
+          'https://cdn12.picryl.com/photo/2016/12/31/cline-river-canada-water-nature-landscapes-8c94de-1024.jpg'
         ],
         location: { name: 'Cline River Canyon', lat: 52.1333, lon: -116.4833 }
       }
@@ -173,11 +188,14 @@ export const itineraryData: DayItinerary[] = [
 
 家庭隱藏版酒莊，獨特Auxerrois Icewine + 雪園壁爐溫馨試飲。體驗精緻的冰酒品鑑，了解冰酒釀造工藝，在壁爐旁享受浪漫時光。`,
         photos: [
-          'https://littlestrawvineyards.ca/wp-content/uploads/2020/01/Little-Straw-Vineyards-Winter-scaled.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/3f/e0/5d/caption.jpg?w=1200&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/1b/3f/e0/64/caption.jpg',
-          'https://littlestrawvineyards.ca/wp-content/uploads/2020/01/Little-Straw-Vineyards-Tasting-Room.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/4c/8f/d7/little-straw-vineyards.jpg?w=1200&h=-1&s=1'
+          'https://wilmingtonncmagazine.com/cdn/Food/desertwine1.jpg',
+          'https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_534,q_75,w_800/v1/clients/southwestontario/OSCWGA_012_7f5e9927-bf19-417f-b0fa-6b9d8984d83f.jpg',
+          'https://images-dh-production-baselayer.dailyhive.com/uploads/2025/12/Shutterstock_2290607051.jpg',
+          'https://d20jhx4r9t6zw8.cloudfront.net/2264400_large_dcd40c63.jpg',
+          'https://travel.destinationcanada.com/_next/image?url=https%3A%2F%2Fadmin.destinationcanada.com%2Fsites%2Fdefault%2Ffiles%2Fimages%2Farticle%2Fniagara-winter-se093_08rr-2000.jpg&w=1920&q=75',
+          'https://d11vyokdyewbcr.cloudfront.net/2264397_large_13d06f7c.jpg',
+          'https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,h_1200,q_75,w_1200/v1/clients/fingerlakesvc-redesign/lake_house_canandaigua_exterior_fire_pit_a68635f3-a9f8-4763-afb8-a4dc1655995b.jpg',
+          'https://viavinumwinetours.com/wp-content/uploads/2023/02/vino-de-hielo.jpg'
         ],
         location: { name: 'Little Straw Vineyards', lat: 49.8881, lon: -119.4960 },
         highlights: [
@@ -192,11 +210,12 @@ export const itineraryData: DayItinerary[] = [
         time: '下午/晚上',
         description: '沿Okanagan Lake凍湖散步，雪景湖光療癒，手牽手約會。享受湖畔寧靜的冬日氛圍，拍照留念。',
         photos: [
-          'https://www.vmcdn.ca/f/files/okanagan/images/travel/okanagan-lake-kelowna-winter.jpg',
-          'https://www.explorekelowna.com/sites/default/files/styles/listing_slideshow/public/listing_images/38983/Winter%20in%20Kelowna.jpg?itok=8QK7qL2Y',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5e/d0/7a/okanagan-lake.jpg?w=1200&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/1a/89/64/0f/caption.jpg',
-          'https://www.tourismkelowna.com/wp-content/uploads/2019/12/Okanagan-Lake-Winter.jpg'
+          'https://www.shutterstock.com/image-photo/okanagan-lake-landscape-winter-time-260nw-2412791331.jpg',
+          'https://imagedelivery.net/rCY_-t_NaBnc_UkEr8yoCA/cb3f3f1e-d2f4-452e-4c0b-a03f15532d00/instory',
+          'https://www.shutterstock.com/image-photo/highangle-view-okanagan-lake-munson-260nw-2642273039.jpg',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10154738332611201',
+          'https://thumbs.dreamstime.com/b/people-skate-frozen-lake-surrounded-snow-capped-mountains-under-clear-blue-winter-sky-bright-sun-shines-creating-398703968.jpg',
+          'https://www.shutterstock.com/image-photo/lake-akan-frozen-winter-260nw-2660109683.jpg'
         ],
         location: { name: 'Okanagan Lake', lat: 49.8659, lon: -119.4944 }
       },
@@ -214,10 +233,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Accent Inn Kelowna',
         description: '入住Accent Inn Kelowna，位置方便近酒莊。',
         photos: [
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/8d/4e/97/accent-inns-kelowna.jpg?w=700&h=-1&s=1',
-          'https://www.accentinns.com/wp-content/uploads/2019/11/Kelowna-Hotel-Room-King.jpg',
-          'https://media-cdn.tripadvisor.com/media/photo-s/06/73/11/2c/accent-inns-kelowna.jpg',
-          'https://cf.bstatic.com/xdata/images/hotel/max1024x768/223447831.jpg?k=8e7c9b4e6f0d9e8e8e8e8e8e8e8e8e8e8e8e8e8e&o='
+          'https://q-xx.bstatic.com/xdata/images/hotel/max500/567090739.jpg?k=b388a45e07850cfa8eaf1840e3f57ddd315786ad6dfe6f606bcb6d6bf1e71a58&o=',
+          'https://pix10.agoda.net/hotelImages/2463897/-1/c67f8e0bde73963fad8771e2bd441595.jpg?ce=0&s=414x232',
+          'https://imgcy.trivago.com/c_fill,d_dummy.jpeg,e_sharpen:60,f_auto,h_267,q_40,w_400/partner-images/97/78/ad1380e4696c65c6659df6347bee3e253024300466015ad96e7adb9f045f.jpeg',
+          'https://images.trvl-media.com/lodging/1000000/20000/10300/10255/d3d75899.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+          'https://images.trvl-media.com/lodging/1000000/20000/10300/10255/63343f8d.jpg?impolicy=fcrop&w=1200&h=800&quality=medium',
+          'https://images.trvl-media.com/lodging/1000000/20000/10300/10255/e2910e91.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill'
         ],
         location: { name: 'Accent Inn Kelowna', lat: 49.8881, lon: -119.4960 },
         highlights: [
@@ -232,34 +253,44 @@ export const itineraryData: DayItinerary[] = [
         title: 'Kasugai Gardens',
         description: 'Kelowna市區日式雪園，寧靜散步拍照。',
         photos: [
-          'https://www.tourismkelowna.com/wp-content/uploads/2020/11/Kasugai-Gardens-scaled.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/5e/d0/7a/kasugai-gardens.jpg?w=1200&h=-1&s=1',
-          'https://kelowna.ca/sites/files/1/images/parks-recreation/kasugai-gardens-winter.jpg'
+          'https://imagedelivery.net/rCY_-t_NaBnc_UkEr8yoCA/8249af7e-88ed-425c-cd0f-e3a8f907cb00/public',
+          'https://imagedelivery.net/rCY_-t_NaBnc_UkEr8yoCA/b10ab189-9cf1-4a99-9acd-c29c51667b00/instory',
+          'http://infotel.ca/news/medialibrary/image/mediaitemid36077-6556.jpg?q=80',
+          'https://imagedelivery.net/rCY_-t_NaBnc_UkEr8yoCA/387ef1dd-dabf-4abd-59c3-0bc627c1f400/instory',
+          'https://imagedelivery.net/rCY_-t_NaBnc_UkEr8yoCA/b062a1c6-19fb-4666-17cb-e0093763e000/public',
+          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/47/4b/87/kasugai-garden.jpg?w=900&h=500&s=1'
         ],
         location: { name: 'Kasugai Gardens', lat: 49.8824, lon: -119.4850 }
       },
       {
         id: 'd2-alt-2',
         type: 'alternative',
-        title: 'Myra Canyon或Knox Mountain',
+        title: 'Myra Canyon',
         description: '輕鬆冬季步道，湖景雪山view。',
         photos: [
-          'https://www.tourismkelowna.com/wp-content/uploads/2019/12/Knox-Mountain-Winter.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5e/d0/7b/knox-mountain.jpg?w=1200&h=-1&s=1',
-          'https://myradventures.ca/wp-content/uploads/2020/01/Myra-Canyon-Winter.jpg'
+          'https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_75,w_1200/v1/clients/kelowna/112_3_9759_jpeg_385fff1d-8319-4d25-aa68-5879213e3cbf.jpg',
+          'https://explorethemap.com/wp-content/uploads/2019/01/myra-canyon-snowshoe-winter-scaled.jpg',
+          'https://imagedelivery.net/TQvnm7oerOgnXiLRz_YKZQ/1c98a7ab-a400-4490-5fb3-a3bbb83c4100/horizontal',
+          'https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=3790618903886764706',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10166043243225054',
+          'https://res.cloudinary.com/spheremedia/image/upload/f_auto/q_auto/w_660,ar_3:2,c_auto/v1705349916/Kelowna/99397_PowerPoint_2400px_im9qzn.avif'
         ],
-        location: { name: 'Knox Mountain', lat: 49.9167, lon: -119.4833 }
+        location: { name: 'Myra Canyon', lat: 49.8167, lon: -119.3333 }
       },
       {
         id: 'd2-alt-3',
         type: 'alternative',
-        title: 'Kelowna市區室內',
-        description: '逛本地咖啡廳或藝術空間（如果想暖和放鬆）。',
+        title: 'Knox Mountain',
+        description: '輕鬆冬季步道，湖景雪山view。',
         photos: [
-          'https://www.tourismkelowna.com/wp-content/uploads/2019/12/Kelowna-Downtown-Winter.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5e/d0/7c/kelowna-downtown.jpg?w=1200&h=-1&s=1'
+          'https://assets.simpleviewinc.com/simpleview/image/fetch/c_fill,h_900,q_75,w_1200/https://assets.simpleviewcms.com/simpleview/image/upload/v1/clients/kelowna/pincushion1_85be008b-be25-410c-bf50-0ea4e179467d.jpg',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10161292797869461',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10237209622613875',
+          'https://hikebiketravel.com/wp-content/uploads/2020/02/Kelowna-2.jpg',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10161292798469461',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=3679591532126822'
         ],
-        location: { name: 'Kelowna Downtown', lat: 49.8881, lon: -119.4960 }
+        location: { name: 'Knox Mountain', lat: 49.9167, lon: -119.4833 }
       }
     ]
   },
@@ -292,12 +323,12 @@ export const itineraryData: DayItinerary[] = [
         time: '晚上抵達泡湯',
         description: '在Upper Arrow Lake湖畔享受天然溫泉。多個溫度不同的礦泉池（熱池40-42°C），在雪花飄落中泡湯，欣賞壯麗的雪山與湖景。夜泡雪山星空，可加情侶SPA。',
         photos: [
-          'https://halcyon-hotsprings.com/wp-content/uploads/2018/11/Halcyon-Hot-Springs-Pools.jpg',
-          'https://www.backcountryskiingcanada.com/web/default/files/pages-image/Halcyon/halcyon-hot-springs-backcountry-skiing.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/89/c1/e5/halcyon-hot-springs.jpg?w=1200&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/0f/9c/5a/51/halcyon-hot-springs.jpg',
-          'https://cf.bstatic.com/xdata/images/hotel/max1024x768/140883832.jpg?k=8e7c9b4e6f0d9e8e8e8e8e8e8e8e8e8e8e8e8e8e&o=',
-          'https://www.tourismkootenays.com/wp-content/uploads/2019/01/Halcyon-Hot-Springs-Pool.jpg'
+          'https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=3779623234900762872',
+          'https://www.discovernelson.com/wp-content/sabai/File/thumbnails/fc4405af66816858f92cbc5213cd6def.jpg',
+          'https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=3787314954702343823',
+          'https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=3787314954693930738',
+          'https://lookaside.instagram.com/seo/google_widget/crawler/?media_id=2992746494995891254',
+          'https://images.squarespace-cdn.com/content/v1/5f4032978f7b8279d7fe55f9/e889e5d1-9e63-4f8a-bf09-13f4e7eae43d/HalcyonHotSpringsbc.jpg'
         ],
         location: { name: 'Halcyon Hot Springs', lat: 50.5667, lon: -117.8333 },
         highlights: [
@@ -318,11 +349,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Halcyon Hot Springs 湖景小屋',
         description: '入住度假村湖景小屋，高級浪漫夜。房間可直接欣賞Arrow Lake與周圍雪山美景。',
         photos: [
-          'https://halcyon-hotsprings.com/wp-content/uploads/2018/11/Lakeview-Chalet.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/9c/5a/3d/halcyon-hot-springs.jpg?w=700&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/0f/89/c1/f4/halcyon-hot-springs.jpg',
-          'https://cf.bstatic.com/xdata/images/hotel/max1024x768/140883845.jpg?k=8e7c9b4e6f0d9e8e8e8e8e8e8e8e8e8e8e8e8e8e&o=',
-          'https://halcyon-hotsprings.com/wp-content/uploads/2018/11/Chalet-Interior.jpg'
+          'https://images.trvl-media.com/lodging/16000000/15130000/15120500/15120434/9126ac0b.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+          'https://images.trvl-media.com/lodging/16000000/15130000/15120500/15120434/9321e592.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+          'https://images.trvl-media.com/lodging/16000000/15130000/15120500/15120434/f3e5b557.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+          'https://images.trvl-media.com/lodging/16000000/15130000/15120500/15120434/19719f3c.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+          'https://images.trvl-media.com/lodging/16000000/15130000/15120500/15120434/2ea62799.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill',
+          'https://q-xx.bstatic.com/xdata/images/hotel/max500/413656373.jpg?k=5a9f1c042ac28835c1364da211eb98e92f93d5b581542e8bca3663bb7cc465e9&o='
         ],
         location: { name: 'Halcyon Hot Springs Resort', lat: 50.5667, lon: -117.8333 },
         highlights: [
@@ -334,12 +366,15 @@ export const itineraryData: DayItinerary[] = [
       {
         id: 'd3-alt-1',
         type: 'alternative',
-        title: 'Kelowna市區SPA',
-        description: '例如Beyond Wrapture，情侶按摩放鬆。',
+        title: 'Beyond Wrapture Day Spa',
+        description: 'Kelowna市區SPA，情侶按摩放鬆。',
         photos: [
-          'https://beyondwrapture.com/wp-content/uploads/2019/11/Beyond-Wrapture-Spa.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5e/d0/7d/beyond-wrapture.jpg?w=1200&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/0e/5e/d0/7e/spa-room.jpg'
+          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/55/54/ce/relax-here.jpg?w=600&h=400&s=1',
+          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/73/e3/ac/relax-with-a-hot-shave.jpg?w=600&h=400&s=1',
+          'https://res.cloudinary.com/spheremedia/image/upload/f_auto/q_auto/w_969,ar_3:2,c_auto/v1705351598/Business%20Images/Hyatt%20Place%20Kelowna/hyatt-place-17_hguwzk.avif',
+          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/73/e3/b1/our-authentic-barber.jpg?w=900&h=500&s=1',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=10156885794206341',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=2285379551629800'
         ],
         location: { name: 'Beyond Wrapture', lat: 49.8881, lon: -119.4960 }
       },
@@ -349,9 +384,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Revelstoke途中短停',
         description: '逛市區雪景或喝咖啡。',
         photos: [
-          'https://www.tourismrevelstoke.com/wp-content/uploads/2019/12/Revelstoke-Downtown-Winter.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5e/d0/7f/revelstoke-downtown.jpg?w=1200&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/0e/5e/d0/80/revelstoke-winter.jpg'
+          'https://a-ca.storyblok.com/f/2000158/1200x800/0f2b4908c9/web_blog-2023-winter-downtown-revelstoke-first-street-night-shot-credit-shoal-raymond-shoal-raw-2.jpg',
+          'https://media.istockphoto.com/id/505870321/photo/revelstoke-british-columbia-in-winter.jpg?s=612x612&w=0&k=20&c=T73FwlrRas2ua9aJcXlmTYcdMtg6E8DKh2RKl7UCWA0=',
+          'https://www.mountainwatch.com/wp-content/uploads/2021/11/200226_202.jpg',
+          'https://seerevelstoke.com/_next/image?url=https%3A%2F%2Fa-ca.storyblok.com%2Ff%2F2000158%2F1200x800%2Fbd3dfd51b5%2Fweb_blog-downtown-winter-credit-instagram-adrift-vision-social-web-only.jpg&w=3840&q=75',
+          'https://c8.alamy.com/comp/D1RJ09/snowy-streets-in-revelstoke-in-british-columbia-leading-to-high-mountains-D1RJ09.jpg',
+          'https://www.datocms-assets.com/163516/1751444390-fredrikssonm_2.jpg?auto=format&bg=FFFFFF&w=1400'
         ],
         location: { name: 'Revelstoke', lat: 50.9981, lon: -118.1957 }
       },
@@ -361,9 +399,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Nakusp Hot Springs',
         description: '近Halcyon，另一個溫泉選擇。',
         photos: [
-          'https://www.tourismkootenays.com/wp-content/uploads/2019/01/Nakusp-Hot-Springs.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5e/d0/81/nakusp-hot-springs.jpg?w=1200&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/0e/5e/d0/82/nakusp-pools.jpg'
+          'https://britishcolumbia.com/wp-content/uploads/2024/10/d240487e-e678-4559-8219-8afc86107e2c.jpeg',
+          'https://images.squarespace-cdn.com/content/v1/54aa965ae4b09569a145713f/1580000877486-YN6UHIGPC3PM6ALHF7OQ/%C2%A9KateePederson-11.jpg',
+          'https://www.backcountryskiingcanada.com/web/default/files/pages-image/Nakusp_Hot_Springs/Nakusp-Hot-Springs-3.jpg',
+          'https://cdn.ordinary-adventures.com/wp-content/uploads/2022/02/23085945/nakusphotsprings.jpg.webp',
+          'https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1304187005079233',
+          'https://happiestoutdoors.ca/wp-content/uploads/2019/10/radiumhotsprings-1024x684.jpg.webp'
         ],
         location: { name: 'Nakusp Hot Springs', lat: 50.2333, lon: -117.8000 }
       }
@@ -416,9 +457,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Natural Bridge',
         description: '近Emerald Lake，冬季冰河景觀路邊短停。',
         photos: [
-          'https://www.banfflakelouise.com/sites/default/files/styles/landscape_large/public/natural-bridge-winter.jpg?itok=9Zq2xZ1K',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5e/d0/83/natural-bridge.jpg?w=1200&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/0e/5e/d0/84/natural-bridge-yoho.jpg'
+          'https://substackcdn.com/image/fetch/$s_!FRJ-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe4e522d8-81b4-478c-97e3-778982ad8a0d_4608x3456.jpeg',
+          'https://www.tommackie.com/photos/thumbnail/180034-1-xf039.jpg',
+          'https://substackcdn.com/image/fetch/$s_!Yl6M!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F944b1356-23a4-4888-a323-d0c2f2d967fb_4608x3456.jpeg',
+          'https://substackcdn.com/image/fetch/$s_!FhBU!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3c25180b-59c0-42a9-ac9a-a391ea7fb5c2_4032x2268.jpeg',
+          'https://wanderwisdom.com/.image/c_fill,g_faces:center/MTk3MTc3MzMwOTMyNjU1MTg3/shutterstock_2265664171.jpg',
+          'https://img.freepik.com/premium-photo/frozen-natural-bridge-with-snowy-pine-forest-yoho-national-park_49071-17396.jpg'
         ],
         location: { name: 'Natural Bridge', lat: 51.4167, lon: -116.5333 }
       },
@@ -428,9 +472,12 @@ export const itineraryData: DayItinerary[] = [
         title: 'Golden小鎮',
         description: '途中休息，喝熱飲或逛可愛市區。',
         photos: [
-          'https://www.tourismgolden.com/wp-content/uploads/2019/12/Golden-Downtown-Winter.jpg',
-          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5e/d0/85/golden-bc.jpg?w=1200&h=-1&s=1',
-          'https://media-cdn.tripadvisor.com/media/photo-s/0e/5e/d0/86/golden-winter.jpg'
+          'https://uploads-ssl.webflow.com/63cc189cb0c914671014ec55/65b91d175a9f4191a5bd187d_town%20of%20golden-2.jpg',
+          'https://www.datocms-assets.com/163516/1751446210-copy-of-credit-dave-best-3-scaled.jpg?auto=format&bg=FFFFFF&w=1400',
+          'https://www.theinertia.com/wp-content/uploads/2020/02/Golden-BC-attractions-downtown-04-credit-Best-medium-670x447.jpg',
+          'https://ichef.bbci.co.uk/images/ic/480xn/p080dd02.jpg.webp',
+          'https://www.inthesnow.com/wp-content/uploads/2024/10/download-36-768x512.jpeg',
+          'https://www.golden.ca/sites/default/files/styles/5_3/public/2025-11/482212052_1040422681451781_4484194612171680890_n.jpg?itok=TxyRxHiZ'
         ],
         location: { name: 'Golden', lat: 51.2981, lon: -116.9634 }
       }
