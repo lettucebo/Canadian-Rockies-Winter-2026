@@ -46,11 +46,15 @@ export function RouteMap() {
     if (!mapRef.current) return;
 
     let L: any;
+    let LRM: any;
     let mapInstance: any;
+    let routingControl: any;
 
     const initMap = async () => {
       L = (await import('leaflet')).default;
+      LRM = (await import('leaflet-routing-machine')).default;
       await import('leaflet/dist/leaflet.css');
+      await import('leaflet-routing-machine/dist/leaflet-routing-machine.css');
 
       const dayColors: Record<number, string> = {
         1: '#E8965A',
@@ -112,51 +116,78 @@ export function RouteMap() {
         maxZoom: 19,
       }).addTo(mapInstance);
 
-      const routeCoordinates = waypoints.map(w => [w.lat, w.lon]);
-      
-      L.polyline(routeCoordinates, {
-        color: '#E8965A',
-        weight: 3,
-        opacity: 0.7,
-        smoothFactor: 1,
-        dashArray: '10, 5'
+      const routeWaypoints = waypoints.map(w => L.latLng(w.lat, w.lon));
+
+      routingControl = LRM.control({
+        waypoints: routeWaypoints,
+        router: LRM.osrmv1({
+          serviceUrl: 'https://router.project-osrm.org/route/v1'
+        }),
+        lineOptions: {
+          styles: [
+            { color: '#E8965A', opacity: 0.8, weight: 6 },
+            { color: '#FFF', opacity: 0.3, weight: 2 }
+          ],
+          extendToWaypoints: true,
+          missingRouteTolerance: 10
+        },
+        show: false,
+        addWaypoints: false,
+        routeWhileDragging: false,
+        draggableWaypoints: false,
+        fitSelectedRoutes: true,
+        showAlternatives: false,
+        createMarker: function(i: number, waypoint: any, n: number) {
+          const waypointData = waypoints[i];
+          if (!waypointData) return null;
+
+          let icon;
+          if (waypointData.type === 'start') {
+            icon = startIcon;
+          } else if (waypointData.type === 'end') {
+            icon = endIcon;
+          } else {
+            icon = createDayIcon(waypointData.day);
+          }
+
+          const dayColor = dayColors[waypointData.day] || '#E8965A';
+
+          const marker = L.marker(waypoint.latLng, { 
+            icon,
+            draggable: false
+          })
+            .bindPopup(`
+              <div style="font-family: Inter, sans-serif; padding: 4px;">
+                <strong style="color: ${dayColor}; font-size: 14px;">Day ${waypointData.day}</strong><br/>
+                <span style="font-size: 13px;">${waypointData.name}</span>
+              </div>
+            `);
+
+          marker.on('click', () => {
+            setSelectedWaypoint(waypointData);
+          });
+
+          markersRef.current.push(marker);
+          return marker;
+        }
       }).addTo(mapInstance);
 
-      waypoints.forEach((waypoint, index) => {
-        let icon;
-        if (waypoint.type === 'start') {
-          icon = startIcon;
-        } else if (waypoint.type === 'end') {
-          icon = endIcon;
-        } else {
-          icon = createDayIcon(waypoint.day);
-        }
-
-        const dayColor = dayColors[waypoint.day] || '#E8965A';
-
-        const marker = L.marker([waypoint.lat, waypoint.lon], { icon })
-          .addTo(mapInstance)
-          .bindPopup(`
-            <div style="font-family: Inter, sans-serif; padding: 4px;">
-              <strong style="color: ${dayColor}; font-size: 14px;">Day ${waypoint.day}</strong><br/>
-              <span style="font-size: 13px;">${waypoint.name}</span>
-            </div>
-          `);
-
-        marker.on('click', () => {
-          setSelectedWaypoint(waypoint);
-        });
-
-        markersRef.current.push(marker);
-      });
-
-      const bounds = L.latLngBounds(routeCoordinates);
-      mapInstance.fitBounds(bounds, { padding: [50, 50] });
+      const routingContainer = document.querySelector('.leaflet-routing-container');
+      if (routingContainer) {
+        (routingContainer as HTMLElement).style.display = 'none';
+      }
     };
 
     initMap();
 
     return () => {
+      if (routingControl) {
+        try {
+          routingControl.remove();
+        } catch (e) {
+          console.log('Routing control cleanup:', e);
+        }
+      }
       if (mapInstance) {
         mapInstance.remove();
       }
